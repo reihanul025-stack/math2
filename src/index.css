@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bouncePawn {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.04);
+  }
+}
+
+@keyframes diceShake {
+  0% {
+    transform: rotate(0deg) scale(0.95);
+  }
+  25% {
+    transform: rotate(-14deg) scale(1.06);
+  }
+  50% {
+    transform: rotate(14deg) scale(1.08);
+  }
+  75% {
+    transform: rotate(-8deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 3.4s ease-in-out infinite;
+}
+
+.animate-bounce-pawn {
+  animation: bouncePawn 1.4s ease-in-out infinite;
+}
+
+.animate-dice-shake {
+  animation: diceShake 0.35s ease-in-out infinite;
+}
+
+.animate-modal-enter {
+  animation: modalEnter 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-gentle,
+  .animate-bounce-pawn,
+  .animate-dice-shake,
+  .animate-modal-enter {
+    animation: none !important;
+  }
+}
