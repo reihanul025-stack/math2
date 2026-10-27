@@ -1,0 +1,6 @@
+{
+  "name": "Math Adventure — Petualangan Matematika Kelas 3 SD",
+  "description": "Website media pembelajaran interaktif perkalian dan pembagian Kelas 3 SD berbasis permainan papan petualangan, simulasi konsep, lencana prestasi, dan dashboard evaluasi guru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
